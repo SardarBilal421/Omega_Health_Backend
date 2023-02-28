@@ -18,8 +18,14 @@ mongoose
     console.log("DataBase Connected Successfully");
   });
 
+const options = {
+  key: fs.readFileSync("/etc/letsencrypt/live/omigahealth.com/privkey.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/omigahealth.com/fullchain.pem"),
+};
+
 const port = process.env.PORT;
 
-const server = app.listen(port, () => {
-  console.log("App is running");
+const server = http.createServer(app);
+server.listen(port, () => {
+  console.log(`App is running on https://localhost:${port}`);
 });

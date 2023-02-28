@@ -7,7 +7,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-
+app.use((req, res, next) => {
+  console.log("=====================================");
+  console.log(`${req.method}:${req.originalUrl}`);
+  console.log("=====================================");
+  return next();
+});
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
