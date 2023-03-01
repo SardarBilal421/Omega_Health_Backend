@@ -1,4 +1,6 @@
 const app = require("./app");
+const fs = require("fs");
+const http = require("http");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
@@ -18,10 +20,10 @@ mongoose
     console.log("DataBase Connected Successfully");
   });
 
-const options = {
-  key: fs.readFileSync("/etc/letsencrypt/live/omigahealth.com/privkey.pem"),
-  cert: fs.readFileSync("/etc/letsencrypt/live/omigahealth.com/fullchain.pem"),
-};
+// const options = {
+//   key: fs.readFileSync("/etc/letsencrypt/live/omigahealth.com/privkey.pem"),
+//   cert: fs.readFileSync("/etc/letsencrypt/live/omigahealth.com/fullchain.pem"),
+// };
 
 const port = process.env.PORT;
 
