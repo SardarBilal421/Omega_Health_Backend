@@ -27,10 +27,10 @@ exports.uploadHospitalPicDir = upload.array("picture");
 
 exports.getImage = catchAsync(async (req, res, next) => {
   const [SPACE_NAME, SPACE_REGION, ACCESS_KEY, SECRET_KEY] = [
-    `omega-health`,
-    "sfo3.digitaloceanspaces.com",
-    "DO004U2MCNCWB8L2JXVV",
-    "VXn0UnQvQEzW1VxL+f3b6dX6WH7rKlnSur/S48okXAc",
+    `omigahealth`,
+    "fra1.digitaloceanspaces.com",
+    "DO00WNNMBBHN9249HRXZ",
+    "M7uT29VdDY8Xfb2ZbuZOhlTzhxF0bZrLLjqYaBVoBdc",
   ];
 
   AWS.config.update({
@@ -60,10 +60,10 @@ exports.getImage = catchAsync(async (req, res, next) => {
 
 exports.saveImage = catchAsync(async (req, res, next) => {
   const [SPACE_NAME, SPACE_REGION, ACCESS_KEY, SECRET_KEY] = [
-    `omega-health`,
-    "sfo3.digitaloceanspaces.com",
-    "DO004U2MCNCWB8L2JXVV",
-    "VXn0UnQvQEzW1VxL+f3b6dX6WH7rKlnSur/S48okXAc",
+    `omigahealth`,
+    "fra1.digitaloceanspaces.com",
+    "DO00WNNMBBHN9249HRXZ",
+    "M7uT29VdDY8Xfb2ZbuZOhlTzhxF0bZrLLjqYaBVoBdc",
   ];
 
   AWS.config.update({
