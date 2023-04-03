@@ -5,6 +5,7 @@ const doctorSchema = mongoose.Schema(
     name: {
       type: String,
       required: [true, "A doctor must have name"],
+      unique: false,
     },
     qualification: {
       type: String,
@@ -14,9 +15,7 @@ const doctorSchema = mongoose.Schema(
       type: String,
       required: [true, "Doctor must need to enter Experinace"],
     },
-    picture: [
-     String
-    ],
+    picture: [String],
     isActive: {
       type: Boolean,
       default: true,

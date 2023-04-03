@@ -74,3 +74,23 @@ exports.protect = catchAsync(async (req, res, next) => {
   //GRAND ACCESS TO PROTEXTED ROUTE
   next();
 });
+
+exports.updateAdmin = catchAsync(async (req, res, next) => {
+  const user = await User.findByIdAndUpdate(req.params.id, {
+    number: req.body.number,
+    instagram: req.body.instagram,
+    facebook: req.body.facebook,
+    twitter: req.body.twitter,
+  });
+
+  if (!user) {
+    return next(new appError("Unable to update Password", 401));
+  }
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      user,
+    },
+  });
+});

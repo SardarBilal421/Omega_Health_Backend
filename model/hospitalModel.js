@@ -5,6 +5,7 @@ const hospitalSchema = mongoose.Schema(
     name: {
       type: String,
       required: [true, "A Hospital must have name"],
+      unique: false,
     },
     isActive: {
       type: Boolean,
@@ -16,7 +17,8 @@ const hospitalSchema = mongoose.Schema(
         ref: "Department",
       },
     ],
-    picture: [String]
+    picture: [String],
+    description: String,
   },
   {
     toJSON: { virtuals: true },

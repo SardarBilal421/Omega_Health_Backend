@@ -20,6 +20,18 @@ const userSchema = mongoose.Schema({
     minlength: 8,
     select: false,
   },
+  number: {
+    type: String,
+  },
+  instagram: {
+    type: String,
+  },
+  facebook: {
+    type: String,
+  },
+  twitter: {
+    type: String,
+  },
 });
 
 userSchema.pre("save", async function (next) {

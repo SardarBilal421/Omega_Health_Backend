@@ -5,9 +5,7 @@ const userController = require("./../Controller/userController");
 router.post("/logIn", userController.loginUser);
 router.route("/").post(userController.createOne);
 
-// router
-//   .route("/:id")
-//   .patch(doctorController.updateOne)
+router.route("/:id").patch(userController.updateAdmin);
 //   .delete(doctorController.deleteOne);
 
 module.exports = router;

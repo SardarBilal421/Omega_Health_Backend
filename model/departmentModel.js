@@ -6,6 +6,7 @@ const departmentSchema = mongoose.Schema(
     name: {
       type: String,
       required: [true, "A department must have name"],
+      unique: false,
     },
     isActive: {
       type: Boolean,
