@@ -81,6 +81,7 @@ exports.updateAdmin = catchAsync(async (req, res, next) => {
     instagram: req.body.instagram,
     facebook: req.body.facebook,
     twitter: req.body.twitter,
+    hospitalEmail: req.body.hospitalEmail,
   });
 
   if (!user) {

@@ -32,6 +32,12 @@ const userSchema = mongoose.Schema({
   twitter: {
     type: String,
   },
+  hospitalEmail: {
+    type: String,
+    lowercase: true,
+    unique: true,
+    validate: [validator.isEmail, "Please enter a valid Hospital Email"],
+  },
 });
 
 userSchema.pre("save", async function (next) {
