@@ -13,6 +13,7 @@ const departmentSchema = mongoose.Schema(
       default: true,
       select: false,
     },
+    description: String,
     hospital: [
       {
         type: mongoose.Schema.ObjectId,
