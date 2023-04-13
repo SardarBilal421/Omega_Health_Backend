@@ -24,6 +24,19 @@ exports.createOne = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getDetails = catchAsync(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+  if (!user) {
+    return next(new appError("No record found", 404));
+  }
+  res.status(201).json({
+    status: "success",
+    data: {
+      user,
+    },
+  });
+});
+
 exports.loginUser = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 

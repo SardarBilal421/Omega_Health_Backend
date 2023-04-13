@@ -6,6 +6,7 @@ router.post("/logIn", userController.loginUser);
 router.route("/").post(userController.createOne);
 
 router.route("/:id").patch(userController.updateAdmin);
+router.route("/:id").get(userController.getDetails);
 //   .delete(doctorController.deleteOne);
 
 module.exports = router;
